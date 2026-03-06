@@ -440,4 +440,41 @@ This analysis demonstrates that **500 W/cm² passive cooling is achievable** thr
 
 ---
 
-*Research conducted as part of daily engineering challenge series. All models and analysis scripts available in the repository.*
+## Evening Follow-Up Questions
+
+For deeper exploration of today's thermal management challenge:
+
+### Question 1: The Jumping Droplet Energy Balance
+You calculated that only 1-5% of surface energy returns as usable kinetic energy. If you could increase this efficiency from 2% to 4% through surface engineering (nanostructure optimization), how would that change your vapor space height requirements? Would 3 mm work instead of 5-8 mm? What are the trade-offs?
+
+**Key considerations:**
+- Higher efficiency = faster droplet removal
+- But smaller droplets lose more to air drag
+- Optimal droplet size may shift
+
+### Question 2: CTE Mismatch Stress Analysis
+You identified that the diamond → TIM2 → vapor chamber interface has the highest CTE mismatch (16 ppm/K). If you switched from copper (17 ppm/K) to Cu-Mo-Cu (7 ppm/K) for the vapor chamber wall, reducing the mismatch to 6 ppm/K, how much would that reduce shear stress at the interface? Is the $100-200 cost premium for CMC worth it for a prototype?
+
+**Calculation hint:**
+```
+Δσ = E × ΔCTE × ΔT
+Cu: σ = 130 GPa × 16×10⁻⁶ × 125K = 260 MPa
+CMC: σ = 130 GPa × 6×10⁻⁶ × 125K = 98 MPa
+Reduction: 62%
+```
+
+### Question 3: DIY vs. Aerospace Trade-off
+Your home prototyping BOM came to ~$400 for 300-500 W/cm² capability. The aerospace-grade version was ~$2000. At what performance threshold (W/cm²) does the DIY approach hit a hard limit that requires the aerospace materials (diamond, Ag sinter, HFE-7100)? Can you identify the specific bottleneck?
+
+**Hint:** Consider which component fails first as you increase heat flux.
+
+### Question 4: The Etching Pattern Decision
+For your first prototype, you recommended parallel channels (200 μm, 300 μm deep). But if you're building a thermosyphon (not liquid cooling), would radial channels actually perform better for bubble nucleation and vapor escape? Sketch the flow path difference and explain when each geometry wins.
+
+**Compare:**
+- **Parallel:** Best for forced liquid flow
+- **Radial:** Best for pool boiling with gravity return
+
+---
+
+*Research conducted as part of daily engineering challenge series. Evening follow-up at 6:30 PM. All models and analysis scripts available in the repository.*
