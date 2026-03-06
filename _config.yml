@@ -1,0 +1,55 @@
+# Site settings
+title: "Engineering Research Journal"
+description: "Daily research challenges, deep dives, and engineering explorations"
+author: "James"
+email: ""
+baseurl: ""
+url: "https://username.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+
+# Theme settings
+theme: minima
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  papers:
+    output: true
+    permalink: /papers/:name/
+
+# Pagination
+paginate: 10
+paginate_path: "/page/:num/"
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+  - scope:
+      path: ""
+      type: "papers"
+    values:
+      layout: "paper"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata

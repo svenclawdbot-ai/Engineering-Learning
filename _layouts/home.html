@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="home">
+    <h1>Research Journal</h1>
+    <p class="intro">Daily engineering research challenges, deep dives, and technical explorations.</p>
+
+    <h2>Recent Entries</h2>
+    <ul class="post-list">
+        {% for post in site.posts limit:10 %}
+        <li>
+            <span class="post-date">{{ post.date | date: '%Y-%m-%d' }}</span>
+            <h3>
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h3>
+            {% if post.summary %}
+            <p>{{ post.summary | truncate: 150 }}</p>
+            {% endif %}
+            {% if post.topic %}
+            <span class="topic">{{ post.topic }}</span>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="{{ '/archive' | relative_url }}">View all posts →</a></p>
+</div>

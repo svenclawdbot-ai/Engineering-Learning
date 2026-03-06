@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<article class="post">
+    <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+        <div class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">
+                {{ page.date | date: '%B %d, %Y' }}
+            </time>
+            {% if page.topic %}
+            <span class="post-topic">{{ page.topic }}</span>
+            {% endif %}
+            {% if page.tags %}
+            <span class="post-tags">
+                {% for tag in page.tags %}
+                <span class="tag">{{ tag }}</span>
+                {% endfor %}
+            </span>
+            {% endif %}
+        </div>
+    </header>
+
+    {% if page.summary %}
+    <div class="post-summary">
+        <strong>Summary:</strong> {{ page.summary }}
+    </div>
+    {% endif %}
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+
+    {% if page.references %}
+    <section class="references">
+        <h2>References</h2>
+        <ul>
+            {% for ref in page.references %}
+            <li>
+                <strong>{{ ref.author }}</strong> ({{ ref.year }}). 
+                {{ ref.title }}.
+                {% if ref.journal %}<em>{{ ref.journal }}</em>{% endif %}
+                {% if ref.url %}<a href="{{ ref.url }}" target="_blank">[Link]</a>{% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+
+    {% if page.related %}
+    <section class="related-posts">
+        <h2>Related Research</h2>
+        <ul>
+            {% for post_path in page.related %}
+            {% assign post = site.posts | where: "path", post_path | first %}
+            {% if post %}
+            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+    {% endif %}
+
+    <div class="post-navigation">
+        {% if page.previous %}
+        <a class="prev" href="{{ page.previous.url | relative_url }}">← {{ page.previous.title }}</a>
+        {% endif %}
+        {% if page.next %}
+        <a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} →</a>
+        {% endif %}
+    </div>
+</article>

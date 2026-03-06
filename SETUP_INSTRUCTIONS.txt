@@ -1,0 +1,35 @@
+# To get started immediately:
+
+1. Create a GitHub account if you don't have one: https://github.com/join
+
+2. Create a new repository:
+   - Go to https://github.com/new
+   - Repository name: engineering-research-journal
+   - Visibility: Public
+   - Click "Create repository"
+
+3. Push this code to GitHub:
+   
+   cd /home/james/.openclaw/workspace/research-blog
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/engineering-research-journal.git
+   git push -u origin main
+
+4. Enable GitHub Pages:
+   - Go to your repository on GitHub
+   - Settings → Pages
+   - Source: Deploy from a branch
+   - Branch: main / root
+   - Click Save
+
+5. Your site will be live at:
+   https://YOUR_USERNAME.github.io/engineering-research-journal
+
+6. To add new research posts:
+   - Create files in _posts/ with format: YYYY-MM-DD-title.md
+   - Use the template shown in the README
+   - git add, commit, push
+   - Site updates automatically in 1-2 minutes
