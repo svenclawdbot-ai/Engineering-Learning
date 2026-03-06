@@ -389,4 +389,90 @@ Once this works reliably, you're ready for serious prototyping!
 
 ---
 
+## Compact Workspace Layout: 600 × 300mm
+
+### The Challenge
+600mm wide × 300mm deep is compact (laptop-desk size) but workable for electronics. The key is **vertical space** and **modular positioning**.
+
+---
+
+### Recommended Layout (Two-Tier)
+
+```
+Top View (600mm × 300mm):
+┌─────────────────────────────────────────────────────────────┐
+│ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │  ← Wall shelf
+│                                                             │
+│  ┌──────────┐ ┌──────────────────────────────────────────┐ │
+│  │ SOLDER   │ │ MAIN WORK                                │ │
+│  │ (raised) │ │                                          │ │
+│  │ 150×200  │ │  [PSU] [DMM] [Breadboard] [Laptop]      │ │
+│  │ 🌡️      │ │                                          │ │
+│  │ 💨→side  │ │                                          │ │
+│  └──────────┘ └──────────────────────────────────────────┘ │
+│                                                             │
+│  ┌────────┐ ┌────────┐ ┌────────┐                        │
+│  │ Tools  │ │ Parts  │ │ Solder │ ← Front edge storage   │
+│  └────────┘ └────────┘ └────────┘                        │
+└─────────────────────────────────────────────────────────────┘
+                      ↑ YOU SIT HERE
+```
+
+**Key Features:**
+- **Tier 2 (raised 100mm):** Soldering station with fume extraction to side
+- **Tier 1 (desk level):** Main work area with PSU, DMM, breadboard
+- **Wall shelf:** Components, tools, reference materials
+- **Front edge:** Magnetic tool bar, component boxes
+
+### DIY Raised Platform
+
+**Option 1: Storage Boxes**
+- 2× Really Useful Boxes (64L) stacked = 150mm height
+- Cost: £24
+- Storage inside for components
+
+**Option 2: IKEA KALLAX (on side)**
+- 770×390×330mm = perfect height
+- Cost: £25
+- 4× storage cubes
+
+**Option 3: Plywood Box (custom)**
+- B&Q cut to 600×300×100mm
+- Cost: ~£15 + cutting
+- Clean, professional look
+
+### ESD Setup for Compact Space
+
+```
+Single mat covers entire desk:
+┌─────────────────────────┐
+│   ESD MAT (600×300)     │
+│   ┌─────────────────┐   │
+│   │ Work area       │   │
+│   │ (solder + test) │   │
+│   └─────────────────┘   │
+│                         │
+│  Ground: Corner stud    │
+│  Wrist strap connects   │
+└─────────────────────────┘
+
+Product: Pro'sKit 600×300mm ESD mat (£18, Amazon)
+```
+
+### Specific Product List for 600×300mm
+
+| Item | Size | Position | Cost |
+|------|------|----------|------|
+| ESD Mat | 600×300 | Full desk | £18 |
+| Raised platform | 200×150×100 | Left side | £15-25 |
+| Magnetic tool bar | 300mm | Front edge | £10 |
+| Small parts drawers | 150×100×80 | Right front | £12 |
+| LED strip | 600mm | Above desk | £15 |
+| Fume fan (small) | 120×120 | Behind soldering | £15 |
+| Pegboard | 600×400 | Wall above | £15 |
+
+**Total layout cost: £100-120** (in addition to tools)
+
+---
+
 *Part of the home prototyping series. See thermal management guides for project-specific applications.*
